@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docseal-cli"
+version = "0.1.0"
+description = "DocSeal CLI: file encryptor/decryptor using AEAD and password-based KDF"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Your Name"}]
+license = {text = "MIT"}
+keywords = ["encryption", "aead", "privacy", "image"]
+dependencies = [
+  "cryptography>=41.0",
+  "argon2-cffi>=23.1",
+]
+
+[project.scripts]
+docseal = "docseal.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
